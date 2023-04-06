@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "garam-382904",
+  "private_key_id": "9603060e0307912c885009bbd8f2e6f5e48cb0a4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDJb/CGKbFIXD0Q\n02NXP8JCst8HDM98T1OwwdVam+18PforX8K5xUBMHwNUlR2meVjOoCYWnXgrRAmO\nH64S/2pBLplE3QeY92fdMKlEUd0Z0H5r4WkUa40UFxN5ov8ApFSzCFcp2n6ext61\nwQ2VN2wLaMiVjvJ4eYd1wwCF2QELc+gtRuZLOSyTQDUINyVtCCR/VjZN6AprJllC\nXFtR7evxTLNNBEHxcZ5ibpb32zZoJwh3iCcIjnpOoxt66oDVdWPzb74YlyJp0Bpj\n5ojzbjXbFyz+Hh4XTk/jIwc6mCF336kCs1N2Q9IwSthHAj1Enu0Nh9unm+cgYA2k\nFWdDGJhHAgMBAAECggEAHvUtKfFOZaiHWgaixc3utQF4dUTqvlgSrJ+dgodkQCvm\nPrRA4PwHnatGf8FLBUKw+1Bxihg5V6zlKwqDXjgSxGG8/HBbso6TT9MisHVEXatF\nQp8p3xGIZQYG4DLErfyTZ9BoVO5Xd19o6tX4mG4kFLzN1u5ZJVrIDrkhY3CuUGwB\n9YW0dqBN8zFg2RRONkB+I1z77SkusP7pnp9y2nHLEGC3SOAzIucvjcM5w2Sgh6q/\n4i5nN6N4c3vyfCkbjJZ7H5hIhVeJft7RwfoHJpALV9ElVBst3yVL/AcDPHQ4B6zP\nne+01pVP1UaF2WPKyRllWCnSGkLjgRxagk//6PrsQQKBgQDqJIvSf5o4OHVwBOyM\ncwfVz3hJ+D6QsZD57UjyhG7qOcT7wl1v/n9Iove1A4uvv9e8HDsv4WGvHMeonnsc\nRGZ6vQMZHOaYy40UOKod2UwZUEjEVhRH4Egiy2w4DnLG+GTLTsI1W440QZw0FlYL\nvsU2XwFmUeOdr1V1hogwILK9IwKBgQDcPc9cRripcCjPuims1qdWhOI2F0+01yDL\nXcrH6nR/HrqPPZm0Yuz8W45HQDIlWo1TwTcsRgODpaWdwyFRtwfNM324xGF4K/qe\n2p5lzOLTWEPOZOy1n0FEcU8gazGkndt39w9YGTs/uNcGm2HepAqNxYX+e53o9Wqu\nHBCDkFSkjQKBgQDL8HclKuWuEGch4fgTwWHStroEW8hLCY7IUgiWzAk71IOh8cKm\n+Nnu75uoO+VgeE21WDWpV7tY5k11rkx265EDWTyolAa6kZlZQp3SD+H7rnUjJgLW\nNCFAxUSGcvdAHTzV5My94vgyxe8DY20hH9HwsMGsWKlUQFLEYiCfIuvsVwKBgA+V\nO/++bUBn1Ctmc55sDaj8e/jxy0zzT7mz6C4e86Eu7mpGJILz4Oq2G6oE68di0c8U\nQ7AZQBRnewFflhLvDVlChGm3U2IqUnA87aosRfxIKXwH/guXugl6ruuPShLorGef\njnFgT6XhkS1Bfzo+hxSi3ik0W+bovmSVTcHRS3vdAoGBAMded4uVIi8a3N2gFlDP\nW7pG6nc6P2JL0MBa7Jv+POl9EVs0PHohaMq2qCXQGB/AiFO16bnEFZYdlnVwyADV\nWW/w6kvcVIvQBi6Qhcf2ctNQtpzBJrXC3Uib22khjnA1/9p1BxGcrTAGZG+DMW6i\n+Y7eTWEvHi1N7BglXJmNNAXH\n-----END PRIVATE KEY-----\n",
+  "client_email": "garamadmin@garam-382904.iam.gserviceaccount.com",
+  "client_id": "108508322668344330818",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/garamadmin%40garam-382904.iam.gserviceaccount.com"
+}

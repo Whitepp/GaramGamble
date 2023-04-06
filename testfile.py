@@ -45,7 +45,7 @@ async def get_spreadsheet():
 
     try:
         worksheet = auth.open_by_url(url).worksheet(ws_name)
-    except gspread.exceptions.APIError:
+    except gspread.exceptions.APIError
         for gamble_channel in gamble_channels:
             await client.get_channel(gamble_channel).send("API 호출 횟수에 제한이 걸렸습니다. 제발 진정하시고 잠시후 다시 시도해주세요.")
         return
@@ -290,38 +290,6 @@ async def 순위(message):
 
 
 @client.command()
-async def 랭킹(message):
-    if message.channel.id not in gamble_channels: return
-    ws = await get_spreadsheet()
-    if check_maintenance_state(ws):
-        await message.channel.send("진정하시라고요.")
-        return
-
-    list_rank_name = ws.col_values(1)
-    list_rank_money = ws.col_values(2)
-    list_rank = zip(list_rank_name, list_rank_money)
-    list_rank = sorted(list_rank, key=lambda x: int(x[1]), reverse = True)
-
-    text_message = ""
-    cur_rank = 1
-    same_rank_count = 0
-
-    for i in range(2, len(list_rank) if len(list_rank) < 12 else 12):
-        if list_rank[i-1][1] == list_rank[i][1]:
-            cur_rank -= 1
-            text_message += ("\n공동 {}위: {}, 현재 잔고: {}G".format(cur_rank, list_rank[i][0], list_rank[i][1]))
-            same_rank_count += 1
-            cur_rank += 1
-        else:
-            cur_rank += same_rank_count
-            text_message += ("\n현재 {}위: {}, 현재 잔고: {}G".format(cur_rank, list_rank[i][0], list_rank[i][1]))
-            cur_rank += 1
-            same_rank_count = 0
-
-    await message.channel.send(text_message)
-
-
-@client.command()
 async def 겜블(message):
     if message.channel.id not in gamble_channels: return
     embed = discord.Embed(title="gamble bot", description="도박 봇입니다.", color=0xeee657)
@@ -332,7 +300,6 @@ async def 겜블(message):
                     value="G를 걸고, 동전을 던집니다. 맞추면 두 배로 돌려받고, 틀리면 돌려받지 못합니다.\n0G를 소지중이라면 1G를 걸어 성공시 1G를 받을 수 있습니다.",
                     inline=False)
     embed.add_field(name=">>순위\n", value="자신의 순위와 동순위인 사람 수를 알려줍니다.\n", inline=False)
-    embed.add_field(name=">>랭킹\n", value="명예의 전당\n", inline=False)
     await message.send(embed=embed)
 
 

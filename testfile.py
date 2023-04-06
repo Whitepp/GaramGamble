@@ -10,7 +10,7 @@ from discord.utils import get
 
 daily = 2000
 support = 500
-fool = 20000
+fool = 15000
 
 gamble_channels = 1093442747815448637, 1093443393385930772
 ws_name = 'gamble'
@@ -193,8 +193,8 @@ async def 저는쾌락을즐기는똥멍청이입니다(message):
     user = author(message)
     money = await get_money(ws, user)
     if money == 0:
-        if await update_money(ws, money + fool, user, checkin=False):
-            await message.channel.send("{}\n똥멍청이에게 후원 완료!!\n현재 잔고 : {}G".format(user.mention, money + fool))
+        if await update_money(ws, fool, user, checkin=False):
+            await message.channel.send("{}\n똥멍청이에게 후원 완료!!\n현재 잔고 : {}G".format(user.mention, fool))
             return
     else:
         await message.channel.send("0원일때만 구걸할 수 있습니다.")

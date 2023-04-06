@@ -332,6 +332,7 @@ async def 겜블(message):
                     value="G를 걸고, 동전을 던집니다. 맞추면 두 배로 돌려받고, 틀리면 돌려받지 못합니다.\n0G를 소지중이라면 1G를 걸어 성공시 1G를 받을 수 있습니다.",
                     inline=False)
     embed.add_field(name=">>순위\n", value="자신의 순위와 동순위인 사람 수를 알려줍니다.\n", inline=False)
+    embed.add_field(name=">>랭킹\n", value="10위까지 랭킹을 알려줍니다.\n", inline=False)
     await message.send(embed=embed)
 
 

@@ -184,25 +184,6 @@ async def 재난지원금(message):
 
 
 @client.command()
-async def 저는쾌락을즐기는똥멍청이입니다(message):
-    if message.channel.id not in gamble_channels: return
-    ws = await get_spreadsheet()
-    if check_maintenance_state(ws):
-        await message.channel.send("진정하시라고요.")
-        return
-    user = author(message)
-    money = await get_money(ws, user)
-    if money == 0:
-        if await update_money(ws, fool, user, checkin=False):
-            await message.channel.send("{}\n똥멍청이에게 후원 완료!!\n현재 잔고 : {}G".format(user.mention, fool))
-            return
-    else:
-        await message.channel.send("0원일때만 구걸할 수 있습니다.")
-        return
-
-
-
-@client.command()
 async def 확인(message):
     if message.channel.id not in gamble_channels: return
     ws = await get_spreadsheet()

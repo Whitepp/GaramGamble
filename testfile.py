@@ -10,7 +10,7 @@ from discord.utils import get
 
 daily = 2000
 support = 500
-fool = 2000
+fool = 20000
 
 gamble_channels = 1093442747815448637, 1093443393385930772
 ws_name = 'gamble'

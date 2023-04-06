@@ -335,5 +335,6 @@ async def 겜블(message):
     embed.add_field(name=">>랭킹\n", value="명예의 전당\n", inline=False)
     await message.send(embed=embed)
 
+
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)

@@ -126,21 +126,21 @@ def check_maintenance_state(ws):
 @client.command()
 async def 공사(message):
     commander = author(message)
-    if "스텝-DC" in map(lambda x: x.name, commander.roles):
+    if "디코봇관리자" in map(lambda x: x.name, commander.roles):
         await message.channel.send('> ***공사중 PLEASE WAIT ***')
         return
 
 @client.command()
 async def 공사완료(message):
     commander = author(message)
-    if "스텝-DC" in map(lambda x: x.name, commander.roles):
+    if "디코봇관리자" in map(lambda x: x.name, commander.roles):
         await message.channel.send('> ***공사완료! GOOD LUCK! ***')
         return
 
 @client.command()
 async def 초기화는디도(message):
     commander = author(message)
-    if "스텝-DC" in map(lambda x: x.name, commander.roles):
+    if "디코봇관리자" in map(lambda x: x.name, commander.roles):
         ws = await get_spreadsheet()
         ws.resize(rows=1, cols=3)
         await message.channel.send("초기화.")

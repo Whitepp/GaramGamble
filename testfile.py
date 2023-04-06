@@ -194,7 +194,7 @@ async def 저는쾌락을즐기는똥멍청이입니다(message):
     money = await get_money(ws, user)
     if money == 0:
         if await update_money(ws, money + fool, user, checkin=False):
-            await message.channel.send("{}\n똥멍청이에게 후원 완료!!\n현재 잔고 : {}G".format(user.mention, money + support))
+            await message.channel.send("{}\n똥멍청이에게 후원 완료!!\n현재 잔고 : {}G".format(user.mention, money + fool))
             return
     else:
         await message.channel.send("0원일때만 구걸할 수 있습니다.")

@@ -9,7 +9,7 @@ import os
 from discord.utils import get
 
 daily = 2000
-support = 500
+support = 5276
 fool = 15000
 
 gamble_channels = 1093442747815448637, 1093443393385930772

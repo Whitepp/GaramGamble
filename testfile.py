@@ -63,7 +63,11 @@ async def get_row(ws, user=None, mention=None):
     try:
         return ws.find(mention).row
     except gspread.exceptions.CellNotFound:
-        ws.append_row([mention, '10000'])
+        ###
+        guild = await client.fetch_guild('1036216656797642812')
+        member = await guild.fetch_member(user.id)
+
+        ws.append_row([mention, '10000', member.nick])
         return ws.find(mention).row
     except gspread.exceptions.APIError:
         for gamble_channel in gamble_channels:
@@ -89,7 +93,7 @@ async def redeemable(ws, user=None, mention=None):
         row = await get_row(ws, mention=mention)
     if row == -1:
         return False, checkin_timedelta
-    ct = ws.cell(row, 3).value
+    ct = ws.cell(row, 4).value
     if ct:
         time = eval(ct)
         td = current_time() - time
@@ -107,7 +111,7 @@ async def update_money(ws, money, user=None, mention=None, checkin=False):
         return False
     ws.update_cell(row, 2, str(money))
     if checkin:
-        ws.update_cell(row, 3, repr(current_time()))
+        ws.update_cell(row, 4, repr(current_time()))
     return 1
 
 
@@ -361,7 +365,6 @@ async def 겜블(message):
     embed.add_field(name=">>순위\n", value="자신의 순위와 동순위인 사람 수를 알려줍니다.\n", inline=False)
     embed.add_field(name=">>랭킹\n", value="10위까지 랭킹을 알려줍니다.\n", inline=False)
     await message.send(embed=embed)
-
 
 
 access_token = os.environ["BOT_TOKEN"]

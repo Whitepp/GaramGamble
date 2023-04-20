@@ -363,8 +363,6 @@ async def 겜블(message):
     await message.send(embed=embed)
 
 
-client.run("MTA5MzQ0MTc5NjE0ODgzODQ2MA.GbEEnM.rR27v5t1wS-4Hf2WrGBbYU0YQ6GPuwk9iv_r-A")
-
 
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)

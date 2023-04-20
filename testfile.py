@@ -151,7 +151,7 @@ async def 시즌마감(message):
         ws = await get_spreadsheet()
         ws.clear()
         ws.resize(rows=1, cols=4)
-        await message.channel.send("t시즌을 마감합니다. 겜블러 여러분 수고하셨어요.")
+        await message.channel.send("시즌을 마감합니다. 겜블러 여러분 수고하셨어요.")
         return
 
 

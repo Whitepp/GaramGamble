@@ -145,12 +145,13 @@ async def 공사완료(message):
 
 
 @client.command()
-async def 초기화는디도(message):
+async def 시즌마감(message):
     commander = author(message)
     if "디코봇관리자" in map(lambda x: x.name, commander.roles):
         ws = await get_spreadsheet()
-        ws.resize(rows=1, cols=3)
-        await message.channel.send("초기화.")
+        ws.clear()
+        ws.resize(rows=1, cols=4)
+        await message.channel.send("t시즌을 마감합니다. 겜블러 여러분 수고하셨어요.")
         return
 
 

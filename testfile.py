@@ -30,7 +30,7 @@ grace = None
 
 @client.event
 async def on_ready():
-    print("login: Grace Gamble")
+    print("login: Garam Gamble")
     print(client.user.name)
     print(client.user.id)
     print("---------------")

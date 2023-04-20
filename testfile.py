@@ -131,12 +131,14 @@ async def 공사(message):
         await message.channel.send('> ***공사중 PLEASE WAIT ***')
         return
 
+
 @client.command()
 async def 공사완료(message):
     commander = author(message)
     if "디코봇관리자" in map(lambda x: x.name, commander.roles):
         await message.channel.send('> ***공사완료! GOOD LUCK! ***')
         return
+
 
 @client.command()
 async def 초기화는디도(message):
@@ -146,6 +148,7 @@ async def 초기화는디도(message):
         ws.resize(rows=1, cols=3)
         await message.channel.send("초기화.")
         return
+
 
 @client.command()
 async def 출석(message):
@@ -159,10 +162,12 @@ async def 출석(message):
     if redeem:
         money = await get_money(ws, user)
         if await update_money(ws, money + daily, user, checkin=True):
-            await message.channel.send("{}\n:cherry_blossom:좋은 하루되세용!:cherry_blossom: \n현재 잔고 : {}G".format(user.mention, money + daily))
+            await message.channel.send(
+                "{}\n:cherry_blossom:좋은 하루되세용!:cherry_blossom: \n현재 잔고 : {}G".format(user.mention, money + daily))
             return
     await message.channel.send(
-        "{} 출석체크는 24시간에 한번만 가능합니다.\n남은 시간 : 약 {}시간 {}분".format(user.mention, time_remain.seconds // 3600, time_remain.seconds % 3600 // 60))
+        "{} 출석체크는 24시간에 한번만 가능합니다.\n남은 시간 : 약 {}시간 {}분".format(user.mention, time_remain.seconds // 3600,
+                                                               time_remain.seconds % 3600 // 60))
 
 
 @client.command()
@@ -180,6 +185,24 @@ async def 재난지원금(message):
             return
     else:
         await message.channel.send("재난지원금은 0원일때만 신청할수있습니다.")
+        return
+
+
+@client.command()
+async def 키워드(message):
+    if message.channel.id not in gamble_channels: return
+    ws = await get_spreadsheet()
+    if check_maintenance_state(ws):
+        await message.channel.send("진정하시라고요.")
+        return
+    user = author(message)
+    money = await get_money(ws, user)
+    if money == 0:
+        if await update_money(ws, fool, user, checkin=False):
+            await message.channel.send("{}\n키워드!\n현재 잔고 : {}G".format(user.mention, fool))
+            return
+    else:
+        await message.channel.send("키워드 0원일때만 신청할수있습니다.")
         return
 
 
@@ -261,6 +284,10 @@ async def 동전(message):
     if result == choice:
         msg += ':white_check_mark: 성공!\n'
         money += bet
+
+        if money == 777:
+            msg +='OMG!! LUCKY!!!\n'
+            money = 7777777
     else:
         msg += ':x: 실패...\n'
         if money == 0:
@@ -300,14 +327,14 @@ async def 랭킹(message):
     list_rank_name = ws.col_values(1)
     list_rank_money = ws.col_values(2)
     list_rank = zip(list_rank_name, list_rank_money)
-    list_rank = sorted(list_rank, key=lambda x: int(x[1]), reverse = True)
+    list_rank = sorted(list_rank, key=lambda x: int(x[1]), reverse=True)
 
     text_message = ""
     cur_rank = 1
     same_rank_count = 0
 
     for i in range(2, len(list_rank) if len(list_rank) < 12 else 12):
-        if list_rank[i-1][1] == list_rank[i][1]:
+        if list_rank[i - 1][1] == list_rank[i][1]:
             cur_rank -= 1
             text_message += ("\n공동 {}위: {}, 현재 잔고: {}G".format(cur_rank, list_rank[i][0], list_rank[i][1]))
             same_rank_count += 1
@@ -334,6 +361,9 @@ async def 겜블(message):
     embed.add_field(name=">>순위\n", value="자신의 순위와 동순위인 사람 수를 알려줍니다.\n", inline=False)
     embed.add_field(name=">>랭킹\n", value="10위까지 랭킹을 알려줍니다.\n", inline=False)
     await message.send(embed=embed)
+
+
+client.run("MTA5MzQ0MTc5NjE0ODgzODQ2MA.GbEEnM.rR27v5t1wS-4Hf2WrGBbYU0YQ6GPuwk9iv_r-A")
 
 
 access_token = os.environ["BOT_TOKEN"]

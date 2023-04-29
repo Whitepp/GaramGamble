@@ -293,7 +293,7 @@ async def 동전(message):
         """
         if money == 777:
             msg +='OMG!! LUCKY!!!\n'
-            money = 7777777
+            money = 77777
         """
     else:
         msg += ':x: 실패...\n'

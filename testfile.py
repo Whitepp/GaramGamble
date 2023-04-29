@@ -290,11 +290,9 @@ async def 동전(message):
     if result == choice:
         msg += ':white_check_mark: 성공!\n'
         money += bet
-        """
         if money == 777:
             msg +='OMG!! LUCKY!!!\n'
             money = 77777
-        """
     else:
         msg += ':x: 실패...\n'
         if money == 0:

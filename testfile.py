@@ -223,7 +223,7 @@ async def 확인(message):
     money = await get_money(ws, user)
     await message.channel.send("{}\n잔고:{}G".format(user.mention, money))
 
-
+'''
 @client.command()
 async def 송금(message):
     if message.channel.id not in gamble_channels: return
@@ -251,7 +251,7 @@ async def 송금(message):
     await message.channel.send(
         "송금 완료: {} -> {}\n보낸 사람 잔고: {}G\n받는 사람 잔고: {}G".format(sender.mention, rcv, money - int(send),
                                                                rcv_mon + int(send)))
-
+'''
 
 @client.command()
 async def 동전(message):
@@ -359,7 +359,7 @@ async def 겜블(message):
     embed = discord.Embed(title="gamble bot", description="도박 봇입니다.", color=0xeee657)
     embed.add_field(name=">>출석\n", value="2000G를 받습니다. 23시간 55분에 한 번만 사용할 수 있습니다.\n", inline=False)
     embed.add_field(name=">>확인\n", value="자신의 소지 G를 확인합니다.\n", inline=False)
-    embed.add_field(name=">>송금 (멘션) (금액)\n", value="멘션한 사람에게 언급된 금액을 송금합니다.\n", inline=False)
+    #embed.add_field(name=">>송금 (멘션) (금액)\n", value="멘션한 사람에게 언급된 금액을 송금합니다.\n", inline=False)
     embed.add_field(name=">>동전 [앞/뒤] (금액)\n",
                     value="G를 걸고, 동전을 던집니다. 맞추면 두 배로 돌려받고, 틀리면 돌려받지 못합니다.\n0G를 소지중이라면 1G를 걸어 성공시 1G를 받을 수 있습니다.",
                     inline=False)

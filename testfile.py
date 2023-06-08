@@ -224,6 +224,7 @@ async def 확인(message):
     await message.channel.send("{}\n잔고:{}G".format(user.mention, money))
 
 
+         
 @client.command()
 async def 송금(message):
     if message.channel.id not in gamble_channels: return
@@ -251,6 +252,7 @@ async def 송금(message):
     await message.channel.send(
         "송금 완료: {} -> {}\n보낸 사람 잔고: {}G\n받는 사람 잔고: {}G".format(sender.mention, rcv, money - int(send),
                                                                rcv_mon + int(send)))
+
 
 
 @client.command()

@@ -194,7 +194,7 @@ async def 재난지원금(message):
 
 
 @client.command()
-async def 나는진짜어쩔수없는도박쟁이인가봐(message):
+async def 나는어쩔수없는도박쟁이인가봐(message):
     if message.channel.id not in gamble_channels: return
     ws = await get_spreadsheet()
     if check_maintenance_state(ws):
